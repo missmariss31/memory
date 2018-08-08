@@ -1,0 +1,90 @@
+body {
+    background-color: #d0c598;
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    font-size: 36px;
+}
+
+#header-img {
+    width: 100%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.deck {
+    width: 560px;
+    min-height: 780px;
+    background-image: url("../img/deck-background.jpg");
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deck .card {
+    height: 177px;
+    width: 125px;
+    background: #2e3d49;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background-image: url("../img/deck/ace.png");
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background-image: url("../img/deck/queen.png");
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}

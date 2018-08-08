@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Memory Game</title>
+    <meta name="description" content="Memory Card Game">
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Memory Card Game</h1>
+            <img id="header-img" src="img/header.jpg">
+        </header>
+
+        <section class="score-panel">
+            <ul class="stars">
+                <li><i class="star"></i></li>
+                <li><i class="star"></i></li>
+                <li><i class="star"></i></li>
+            </ul>
+
+            <span class="moves">3</span> Moves
+
+            <div class="restart">
+                <i class="repeat"></i>
+            </div>
+        </section>
+
+        <ul class="deck">
+            <li class="card">
+                <i class="diamonds"></i>
+            </li>
+            <li class="card">
+                <i class="clubs"></i>
+            </li>
+            <li class="card match">
+                <i class="queen"></i>
+            </li>
+            <li class="card">
+                <i class="spades"></i>
+            </li>
+            <li class="card">
+                <i class="hearts"></i>
+            </li>
+            <li class="card match">
+                <i class="queen"></i>
+            </li>
+            <li class="card">
+                <i class="jack"></i>
+            </li>
+            <li class="card">
+                <i class="diamonds"></i>
+            </li>
+            <li class="card">
+                <i class="hearts"></i>
+            </li>
+            <li class="card">
+                <i class="clubs"></i>
+            </li>
+            <li class="card">
+                <i class="spades"></i>
+            </li>
+            <li class="card">
+                <i class="king"></i>
+            </li>
+            <li class="card open show">
+                <i class="ace"></i>
+            </li>
+            <li class="card">
+                <i class="jack"></i>
+            </li>
+            <li class="card">
+                <i class="king"></i>
+            </li>
+            <li class="card">
+                <i class="ace"></i>
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/deck.js"></script>
+    <script src="js/play.js"></script>
+</body>
+
+</html>
