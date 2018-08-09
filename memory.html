@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Memory Game</title>
     <meta name="description" content="Memory Card Game">
-    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,72 +18,39 @@
         </header>
 
         <section class="score-panel">
+
             <ul class="stars">
-                <li><i class="star"></i></li>
-                <li><i class="star"></i></li>
-                <li><i class="star"></i></li>
+                <li class="star">X</li>
+                <li class="star">X</li>
+                <li class="star">X</li>
             </ul>
-
-            <span class="moves">3</span> Moves
-
-            <div class="restart">
-                <i class="repeat"></i>
+            <div>
+                <span class="moves">3</span> moves
+                <span class="restart">Restart</span>
             </div>
         </section>
 
         <ul class="deck">
-            <li class="card">
-                <i class="diamonds"></i>
-            </li>
-            <li class="card">
-                <i class="clubs"></i>
-            </li>
-            <li class="card match">
-                <i class="queen"></i>
-            </li>
-            <li class="card">
-                <i class="spades"></i>
-            </li>
-            <li class="card">
-                <i class="hearts"></i>
-            </li>
-            <li class="card match">
-                <i class="queen"></i>
-            </li>
-            <li class="card">
-                <i class="jack"></i>
-            </li>
-            <li class="card">
-                <i class="diamonds"></i>
-            </li>
-            <li class="card">
-                <i class="hearts"></i>
-            </li>
-            <li class="card">
-                <i class="clubs"></i>
-            </li>
-            <li class="card">
-                <i class="spades"></i>
-            </li>
-            <li class="card">
-                <i class="king"></i>
-            </li>
-            <li class="card open show">
-                <i class="ace"></i>
-            </li>
-            <li class="card">
-                <i class="jack"></i>
-            </li>
-            <li class="card">
-                <i class="king"></i>
-            </li>
-            <li class="card">
-                <i class="ace"></i>
-            </li>
+            <li class="card ace"></li>
+            <li class="card queen"></li>
+            <li class="card king"></li>
+            <li class="card jack"></li>
+            <li class="card hearts"></li>
+            <li class="card diamonds"></li>
+            <li class="card clubs"></li>
+            <li class="card spades"></li>
+            <li class="card ace"></li>
+            <li class="card queen"></li>
+            <li class="card king"></li>
+            <li class="card jack"></li>
+            <li class="card hearts"></li>
+            <li class="card diamonds"></li>
+            <li class="card clubs"></li>
+            <li class="card spades"></li>
         </ul>
     </div>
-
     <script src="js/deck.js"></script>
+    <script src="js/click.js"></script>
     <script src="js/play.js"></script>
 </body>
 

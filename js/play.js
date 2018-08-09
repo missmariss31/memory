@@ -1,8 +1,9 @@
 /*
- * Created a list that holds all cards
+ * Created a list that holds all HTML Card Elements
  */
-const cards = document.querySelectorAll(".card");
-
+const deckEl = document.querySelector(".deck");
+const cardEls = document.querySelectorAll(".card");
+console.log(cardEls);
 
 /*
  * Display the cards on the page
@@ -12,21 +13,20 @@ const cards = document.querySelectorAll(".card");
  */
 
 function shuffle(deck) {
-    const array = Array.prototype.slice.call(deck);
-    array.sort(function(a,b){ return 0.5 - Math.random() });
-    return array;
+    deck.sort(function(a,b){ return 0.5 - Math.random() });
+    return deck;
 }
 
-console.log(cards);
-const shuffleCards = shuffle(cards);
-console.log(shuffleCards);
+const shuffledDeck = shuffle(cardDeck);
 
-//get image source for each card
-for (const card of shuffleCards) {
-    const suit = card.childNodes[1].className;
-    source = cardDeck[suit];
-    console.log(source);
+function dealTheDeck(deckElements) {
+    i=0
+    for (const el of deckElements) {
+        el.className = shuffleDeck[i].class;
+        i++;
+    }
 }
+
 
 //add HTML to page
 

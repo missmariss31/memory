@@ -1,10 +1,18 @@
-const cardDeck = {
-    "ace":"img/deck/ace.png",
-    "queen":"img/deck/queen.png",
-    "king":"img/deck/king.png",
-    "jack":"img/deck/jack.png",
-    "hearts":"img/deck/hearts.png",
-    "diamonds":"img/deck/diamonds.png",
-    "clubs":"img/deck/clubs.png",
-    "spades":"img/deck/spades.png"
-};
+const cardDeck = [
+    {class:"ace", flip:false, match:false},
+    {class:"queen", flip:false, match:false},
+    {class:"king",flip:false, match:false},
+    {class:"jack",flip:false, match:false},
+    {class:"hearts",flip:false, match:false},
+    {class:"diamonds",flip:false, match:false},
+    {class:"clubs",flip:false, match:false},
+    {class:"spades",flip:false, match:false},
+    {class:"ace", flip:false, match:false},
+    {class:"queen", flip:false, match:false},
+    {class:"king",flip:false, match:false},
+    {class:"jack",flip:false, match:false},
+    {class:"hearts",flip:false, match:false},
+    {class:"diamonds",flip:false, match:false},
+    {class:"clubs",flip:false, match:false},
+    {class:"spades",flip:false, match:false}
+];

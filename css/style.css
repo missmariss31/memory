@@ -1,6 +1,6 @@
 body {
     background-color: #d0c598;
-    font-family: 'Cedarville Cursive', cursive;
+    font-family: 'Amatic SC', cursive;
 }
 
 .container {
@@ -21,6 +21,10 @@ header {
     border-bottom: 2px solid black;
 }
 
+/*
+ * Card Deck
+ */
+
 .deck {
     width: 560px;
     min-height: 780px;
@@ -37,6 +41,7 @@ header {
 .deck .card {
     height: 177px;
     width: 125px;
+    font-size: 0px;
     background: #2e3d49;
     color: #ffffff;
     border-radius: 10px;
@@ -46,19 +51,51 @@ header {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
-.deck .card.open {
-    transform: rotateY(0);
-    background-image: url("../img/deck/ace.png");
-    cursor: default;
+/*
+ * Cards
+ */
+
+.card.ace {
+    background-image: url(../img/deck/ace.png);
+}
+.card.queen {
+    background-image: url(../img/deck/queen.png);
+}
+.card.king{
+    background-image: url(../img/deck/king.png);
+}
+.card.jack{
+    background-image: url(../img/deck/jack.png);
+}
+.card.hearts{
+    background-image: url(../img/deck/hearts.png);
+}
+.card.diamonds{
+    background-image: url(../img/deck/diamonds.png);
+}
+.card.clubs{
+    background-image: url(../img/deck/clubs.png);
+}
+.card.spades{
+    background-image: url(../img/deck/spades.png);
 }
 
-.deck .card.show {
-    font-size: 33px;
+/*
+ * Card State
+ */
+
+.deck .card.hide {
+    background-image: url(../img/back.jpg);
+}
+
+.deck .card.flip {
+    transform: rotateY(0);
+    cursor: default;
 }
 
 .deck .card.match {
     cursor: default;
-    background-image: url("../img/deck/queen.png");
+    border: 2px solid yellow;
     font-size: 33px;
 }
 
@@ -72,19 +109,34 @@ header {
     margin-bottom: 10px;
 }
 
-.score-panel .stars {
+.stars {
+    list-style: none;
     margin: 0;
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
 }
 
-.score-panel .stars li {
-    list-style: none;
+.star {
+    width:30px;
+    height: 30px;
+    font-size: 0px;
+    border: 1px solid black;
+    background-image: url(../img/gold-star.jpg);
+    background-size: 30px 30px;
     display: inline-block;
 }
 
-.score-panel .restart {
+.star.ex {
+    font-size: 30px;
+}
+
+.moves {
+    font-size: 24px;
+}
+
+.restart {
     float: right;
     cursor: pointer;
+    font-size: 24px;
 }
