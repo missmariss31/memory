@@ -22,13 +22,14 @@ const shuffledDeck = shuffle(cardDeck);
 function dealTheDeck(deckElements) {
     i=0
     for (const el of deckElements) {
-        el.className = shuffleDeck[i].class;
+        el.className = "card " + shuffledDeck[i].class + " hide";
         i++;
     }
 }
 
+dealTheDeck(cardEls);
 
-//add HTML to page
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -40,3 +41,5 @@ function dealTheDeck(deckElements) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+deckEl.addEventListener("click", respondToTheClick);
