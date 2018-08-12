@@ -1,9 +1,17 @@
-/*
- * Created a list that holds all HTML Card Elements
- */
-const deckEl = document.querySelector(".deck");
-const cardEls = document.querySelectorAll(".card");
+
+const state = {
+    cards: cardDeck,
+    timer: 0,
+    stars: 3,
+    lastCard: null,
+    moves: 0,
+};
+
+//List of all card elements
 console.log(cardEls);
+
+//select restart
+const restart = document.querySelector('.restart');
 
 /*
  * Display the cards on the page
@@ -12,17 +20,19 @@ console.log(cardEls);
  *   - add each card's HTML to the page
  */
 
+//shuffle the cards
 function shuffle(deck) {
     deck.sort(function(a,b){ return 0.5 - Math.random() });
     return deck;
 }
 
-const shuffledDeck = shuffle(cardDeck);
+state.cards = shuffle(state.cards);
 
+//deal the deck with cards face down
 function dealTheDeck(deckElements) {
-    i=0
+    let i=0;
     for (const el of deckElements) {
-        el.className = "card " + shuffledDeck[i].class + " hide";
+        el.className = "card " + state.cards[i].class + " hide";
         i++;
     }
 }
@@ -32,14 +42,23 @@ dealTheDeck(cardEls);
 
 
 /*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ * set up the event listeners
  */
 
+//cards
 deckEl.addEventListener("click", respondToTheClick);
+
+//timer
+setInterval(()=>{state.timer++;},1000);
+
+//stars
+const stars = Array.prototype.slice.call(document.querySelectorAll('.star'));
+setInterval(()=>{
+    if(state.timer % 100 === 0 & state.stars !== 0) {
+        stars[state.stars-1].className += " ex";
+        state.stars -= 1;
+    }
+},1000);
+
+//restart
+//restart.addEventListener("click", restartGame);
