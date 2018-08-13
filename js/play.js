@@ -63,6 +63,8 @@ setInterval(()=>{
 },1000);
 
 //restart
-//restart.addEventListener("click", restartGame);
+restart.addEventListener("click", () => {
+    window.location.reload(false);
+});
 
 setInterval(()=>{myFlip(state, nodesArray)},1);

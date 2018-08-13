@@ -86,17 +86,22 @@ header {
 
 .deck .card.hide {
     background-image: url(../img/back.jpg);
+    border: 3px solid red;
+    transition-property: border;
+    transition-duration: 2s;
 }
 
 .deck .card.flip {
-    transform: rotateY(180);
+    transform: rotateY(180deg);
+    transition-duration: 1s;
     cursor: default;
 }
 
 .deck .card.match {
     cursor: default;
     border: 2px solid yellow;
-    font-size: 33px;
+    transform: rotateX(180deg);
+    transition-duration: 1s;
 }
 
 /*
@@ -132,6 +137,10 @@ header {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+}
+
+.timer {
+    font-size: 24px;
 }
 
 .moves {

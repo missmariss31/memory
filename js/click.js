@@ -1,27 +1,4 @@
 //respond to click by updating card
-/*
-function respondToTheClick(evt) {
-     for (const card of state.cards) {
-        if (card.id === evt.target.id) {
-            card.flip = true;
-            card.hide = false;
-            if (state.moves % 2 === 0) {
-                if (evt.target === state.lastCard) {
-                    card.match = true;
-                }else {
-                    setTimeout(()=> {
-                        card.flip = false;
-                        card.hide = true;
-                    },3000);
-                }
-            }
-            break;
-         }
-     }
-    state.lastCard = evt.target;
-    state.moves += 1;
-}
-*/
 
 function myRespondToClick(event) {
     // Find the card in the state that corresponds to the clicked card
@@ -34,8 +11,10 @@ function myRespondToClick(event) {
 
     // If it's an even numbered move
     if (state.moves % 2 === 0) {
-        // Is it a match?
-        if (state.lastCard && state.lastCard.type === currentCard.type) {
+        // Is there a lastCard?  Is it a match?  Was a different card clicked?
+        if (state.lastCard && 
+            state.lastCard.type === currentCard.type &&
+            state.lastCard.id !== currentCard.id) {
             currentCard.match = true;
             state.lastCard.match = true;
         } else {
@@ -47,7 +26,7 @@ function myRespondToClick(event) {
                 // Flip over the last card
                 state.lastCard.flip = false;
                 state.lastCard.hide = true;
-            }, 3000);
+            }, 600);
         }
     }else {
         //store current card in lastCard to check for match on next click
