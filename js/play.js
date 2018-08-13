@@ -4,7 +4,7 @@ const state = {
     timer: 0,
     stars: 3,
     lastCard: null,
-    moves: 0,
+    moves: 1,
 };
 
 //List of all card elements
@@ -32,7 +32,8 @@ state.cards = shuffle(state.cards);
 function dealTheDeck(deckElements) {
     let i=0;
     for (const el of deckElements) {
-        el.className = "card " + state.cards[i].class + " hide";
+        el.className = state.cards[i].class;
+        el.id = state.cards[i].id;
         i++;
     }
 }
@@ -46,7 +47,8 @@ dealTheDeck(cardEls);
  */
 
 //cards
-deckEl.addEventListener("click", respondToTheClick);
+//deckEl.addEventListener("click", respondToTheClick);
+deckEl.addEventListener("click", myRespondToClick);
 
 //timer
 setInterval(()=>{state.timer++;},1000);
@@ -62,3 +64,5 @@ setInterval(()=>{
 
 //restart
 //restart.addEventListener("click", restartGame);
+
+setInterval(()=>{myFlip(state, nodesArray)},1);
