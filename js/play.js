@@ -10,9 +10,6 @@ const state = {
 //List of all card elements
 console.log(cardEls);
 
-//select restart
-const restart = document.querySelector('.restart');
-
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -50,21 +47,24 @@ dealTheDeck(cardEls);
 //deckEl.addEventListener("click", respondToTheClick);
 deckEl.addEventListener("click", myRespondToClick);
 
+//restart
+const restart = document.querySelector('.restart');
+restart.addEventListener("click", () => {
+    window.location.reload(false);
+});
+
 //timer
 setInterval(()=>{state.timer++;},1000);
 
 //stars
 const stars = Array.prototype.slice.call(document.querySelectorAll('.star'));
 setInterval(()=>{
-    if(state.timer % 100 === 0 & state.stars !== 0) {
+    if(state.timer % 60 === 0 & state.stars !== 0) {
         stars[state.stars-1].className += " ex";
         state.stars -= 1;
     }
 },1000);
 
-//restart
-restart.addEventListener("click", () => {
-    window.location.reload(false);
-});
-
-setInterval(()=>{myFlip(state, nodesArray)},1);
+//check for changes in state
+let checkState = setInterval(()=>{myFlip(state, nodesArray)},60);
+checkState;
