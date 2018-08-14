@@ -7,9 +7,6 @@ const state = {
     moves: 1,
 };
 
-//List of all card elements
-console.log(cardEls);
-
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below

@@ -3,7 +3,6 @@
 function myRespondToClick(event) {
     // Find the card in the state that corresponds to the clicked card
     const currentCard = state.cards.find(c => c.id.toString() === event.target.id);
-    console.log(currentCard);
 
     // update how it's flipped
     currentCard.flip = true;

@@ -4,6 +4,7 @@ const cardEls = document.querySelectorAll(".card");
 const nodesArray = Array.prototype.slice.call(cardEls); //nodes array -> array
 
 function myFlip(state, cardEls) {
+    
     //keep track of how many cards match
     let matched = 0
     state.cards.forEach((card, i) => {
@@ -24,6 +25,7 @@ function myFlip(state, cardEls) {
             }
         }
     });
+
     //if all cards match, show stats.
     if (matched === 16) {
         //alert player and show stats
