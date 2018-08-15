@@ -26,8 +26,8 @@ header {
  */
 
 .deck {
-    width: 560px;
-    min-height: 780px;
+    max-width: 560px;
+    height: 780px;
     background-image: url("../img/deck-background.jpg");
     padding: 32px;
     border-radius: 10px;
