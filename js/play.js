@@ -40,8 +40,30 @@ dealTheDeck(cardEls);
  * set up the event listeners
  */
 
+//expand game by hiding title and header image
+const expandButton = document.querySelector('.expand');
+const titleHide = document.querySelector('.game-title');
+const headerImage = document.querySelector('.header-img');
+
+let headerState = true;
+
+expandButton.addEventListener("click", () => {
+    //Did the player click the button an odd number of times?
+    if (headerState) {
+        //hide header title and image
+        titleHide.className = "game-title hide";
+        headerImage.className = "header-img hide";
+        headerState = false;
+    }
+    else {
+        //show header title and image
+        titleHide.className = "game-title";
+        headerImage.className = "header-img";
+        headerState = true;
+    }
+});
+
 //cards
-//deckEl.addEventListener("click", respondToTheClick);
 deckEl.addEventListener("click", myRespondToClick);
 
 //restart
