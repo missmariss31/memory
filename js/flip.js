@@ -26,12 +26,12 @@ function myFlip(state, cardEls) {
         }
     });
 
+    //alert player and show stats
     if (matched === 16) {
-        matched = 0;
-        //alert player and show stats
-        if(!alert(`Congratulations! Your time was ${state.timer} seconds, 
+        document.querySelector("#win").innerHTML = `Congratulations! Your time was ${state.timer} seconds, 
         you got ${state.stars} stars, and you completed the game in ${state.moves/2-0.5} moves! 
-        Let's try again!`)){window.location.reload();}
+        Let's try again!  Click "Restart" to try again.`;  
+        clearInterval(checkState);
     }else {
         //update timer and moves
         timer();
