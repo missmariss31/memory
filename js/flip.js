@@ -26,19 +26,15 @@ function myFlip(state, cardEls) {
         }
     });
 
-    //if all cards match, show stats.
     if (matched === 16) {
+        matched = 0;
         //alert player and show stats
-        alert(`Congratulations!  Your time was ${state.timer} seconds, 
+        if(!alert(`Congratulations! Your time was ${state.timer} seconds, 
         you got ${state.stars} stars, and you completed the game in ${state.moves/2-0.5} moves! 
-        Let's try again!`);
-        matched = null;
-        //reload game after player clicks OK
-        window.location.reload(false);
+        Let's try again!`)){window.location.reload();}
     }else {
         //update timer and moves
         timer();
         moves();
     }
 }
-
